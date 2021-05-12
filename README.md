@@ -256,12 +256,12 @@ attention for their deviation from C:
 
 This section defines details of the C-rona type system.
 
-[Type Promotions]{#cascade .subsubhead}
+[Type Promotions]
 
 Any type is promotable to itself. Additionally, `byte` is promotable to
 `int`
 
-[Operands]{#cascade .subsubhead}
+[Operands]
 
 The following shows the atomic operands and the types that they are
 assigned:
@@ -320,8 +320,7 @@ The type rules of the language are as follows:
 
     The result type is bool in legal cases, ERROR otherwise.
 
--   ::: {#assignType}
-    **assignment operations** are legal if and only if:
+-   **assignment operations** are legal if and only if:
 
     -   Both types are the same and the LHS is an lvalue - the result
         type is that of the LHS
