@@ -26,11 +26,25 @@ on our [special website](https://compilers.cool/language/)
 gets their own language). Please find a faithful copy of the
 language spec that follows.
 
-## Lexical Details {#lexical-details .post-title}
+## Before you go too deep
 
-::: {.post-description}
+Quick notes on this compiler that are not in the spec below.
+This compilers **only** supports x86_64 and **only** supports
+linux builds.
+
+Here is what you have to get before compiling it
+
+``` sh
+$ sudo apt install flex bison libfl-dev
+```
+
+You build the compiler just with `$ make` and run tests with 
+`$ make test`. Clean the directory from build files with
+`$ make clean`
+
+## Lexical Details
+
 This section defines lexical details of the C-rona language.
-:::
 
 #### Reserved Words
 
@@ -122,14 +136,10 @@ comment is illegal.
 No limit may be assumed on the lengths of identifiers, string literals,
 integer literals, comments, etc. other than those limits imposed by the
 underlying implementation of the compiler\'s host language.
-:::
 
-::: {#syntax .section .post}
-## Syntactic Details {#syntactic-details .post-title}
+## Syntactic Details
 
-::: {.post-description}
 *This section described the syntax of the C-rona language.*
-:::
 
 #### Basics
 
@@ -240,14 +250,11 @@ attention for their deviation from C:
                     | id LBRACE exp RBRACE
 
     id              ::= ID
-:::
 
-::: {#types .section .post}
-## Type System Details {#type-system-details .post-title}
 
-::: {.post-description}
+## Type System Details
+
 This section defines details of the C-rona type system.
-:::
 
 [Type Promotions]{#cascade .subsubhead}
 
@@ -267,7 +274,7 @@ assigned:
 -   identifiers have the type of their declaration, which is determined
     during name analysis
 
-[Operators]{#cascade .subsubhead}
+[Operators]
 
 The operators in the language are divided into the following categories:
 
