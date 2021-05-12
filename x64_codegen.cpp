@@ -163,6 +163,7 @@ void BinOpQuad::codegenX64(std::ostream &out)
 		break;
         case MULT8:
                 instr = "mulb";
+                break;
 	case MULT64:
 		instr = "imulq";
 		break;
@@ -174,8 +175,10 @@ void BinOpQuad::codegenX64(std::ostream &out)
 		break;
 	case DIV8:
 		instr = "divb";
+                break;
 	case DIV64:
 		instr = "idivq";
+                break;
 	default:
 		break;
 	}
