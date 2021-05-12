@@ -11,7 +11,7 @@ jobs:
       
       - name: Get flex 💪 and bison 🦬
         run: |
-          sudo apt install flex bison
+          sudo apt install flex bison libfl-dev
 
       - name: Make 🔧
         run: |
