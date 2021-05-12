@@ -201,7 +201,7 @@ CRONA_INTERNAL.o                                        \
 /usr/lib/x86_64-linux-gnu/crtn.o                        \
 -o a.out                                                \
 ");
-			std::system("rm CRONA_INTERAL.o CRONA_INTERNAL.s");
+			std::system("rm CRONA_INTERNAL.o CRONA_INTERNAL.s");
 			return OK;
 		}
 		// Now, let's actually bind everything together!
