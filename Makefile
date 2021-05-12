@@ -31,7 +31,6 @@ all: stdcrona.o
 
 clean:
 	rm -rf *.output *.o *.cc *.hh $(DEPS) cronac 
-	make clean -C tests
 
 -include $(DEPS)
 

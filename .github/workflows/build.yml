@@ -9,7 +9,9 @@ jobs:
           sudo apt install flex bison
 
       - name: Make 🔧
-        run: make
+        run: |
+          make
 
       - name: Test 🚀
-        run: make test
+        run: |
+          make test
