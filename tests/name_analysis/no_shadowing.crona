@@ -1,0 +1,5 @@
+a : byte array[10];
+
+main : void (b : byte) {
+    a[0] = b;
+}

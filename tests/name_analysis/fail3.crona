@@ -1,0 +1,11 @@
+main : void() {
+     b : int;
+     b = 37;
+     s : string;
+     s = "yes";
+     while (b != 37) {
+           s : string;
+           s = "olala";
+           b = s;
+     }
+}

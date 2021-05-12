@@ -1,0 +1,9 @@
+fn : int(a : int) {
+    return true;
+}
+
+test : void() {
+    a : int;
+    a = (1== fn(true));
+    return a;
+}

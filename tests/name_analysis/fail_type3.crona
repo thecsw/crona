@@ -1,0 +1,18 @@
+b : bool;
+arr : byte array[10];
+main : int (size : int, str : string) {
+    i : int;
+    i = 0;
+    while (i < size) {
+        b = b && arr[i] == str[i];
+        if (b) {
+            b : int;
+            b = arr[i];
+            write b;
+        }
+        else {
+            write b;
+        }
+    }
+    return i;
+}

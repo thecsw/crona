@@ -1,0 +1,6 @@
+main : int array[1000]() {
+	a : int;
+	a = 1 + 2;
+	b : int array[1000];
+	return b;
+}

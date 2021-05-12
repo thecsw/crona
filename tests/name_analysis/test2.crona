@@ -1,0 +1,13 @@
+foo : void (toprint : int) {
+	write toprint;
+}
+
+main : int (argc:int, argv:string) {
+	exit_code : int;
+	exit_code = 0;
+	if (argc > 2) {
+		exit_code = 1;
+	}
+	foo(exit_code);
+	return exit_code;
+}

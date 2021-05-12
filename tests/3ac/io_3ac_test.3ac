@@ -1,0 +1,27 @@
+[BEGIN GLOBALS]
+str_2 "Hi "
+str_1 "What is your name?"
+str_3 ", I hope you have a great day!"
+str_0 "\n"
+[END GLOBALS]
+[BEGIN writeLine LOCALS]
+str (formal arg of 0)
+[END writeLine LOCALS]
+fun_writeLine: enter writeLine
+            getarg 1 [str]
+            WRITE [str]
+            WRITE [str_0]
+lbl_0:      leave writeLine
+[BEGIN main LOCALS]
+name (local var of 0 bytes)
+[END main LOCALS]
+main:       enter main
+            setarg 1 [str_1]
+            call writeLine
+            READ [name]
+            WRITE [str_2]
+            WRITE [name]
+            setarg 1 [str_3]
+            call writeLine
+lbl_1:      leave main
+

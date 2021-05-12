@@ -1,0 +1,8 @@
+main : int() {
+    input : byte array[37];
+    write "What's your name?";
+    read input;
+    write "Hello, ";
+    write input;
+    return 0;
+}

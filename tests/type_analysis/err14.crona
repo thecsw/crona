@@ -1,0 +1,8 @@
+foo : void() {}
+
+main : void() {
+    while (7) {}
+    while ("true") {}
+    while (foo) {}
+    while (foo()) {}
+}

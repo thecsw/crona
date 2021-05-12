@@ -1,0 +1,4 @@
+main : void() {
+    a : int array[10];
+    a[1] = 10;
+}

@@ -1,0 +1,10 @@
+foo : void() {}
+
+main : void() {
+    if ("one" < "two") {}
+    if ("three" > true) {}
+    if (true < false) {}
+    if ("mine" >= "yours") {}
+    if ("3D" <= "2D") {}
+    if (foo < 2) {}
+}

@@ -1,0 +1,10 @@
+glob(bool):bool;
+foo(int->int):int(a(int):int){
+	a(int) = 10;
+	return a(int);
+}
+main(->int):int(){
+	a(int):int;
+	glob(bool) = a(int);
+	foo(int->int)(a(int));
+}

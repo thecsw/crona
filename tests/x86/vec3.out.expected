@@ -1,0 +1,5 @@
+a = [300, 50, 0]
+b = [5, -1, 5]
+a + b = [305, 49, 5]
+a . b = 1450
+a and b orthogonal? false

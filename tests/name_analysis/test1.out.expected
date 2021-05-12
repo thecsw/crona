@@ -1,0 +1,9 @@
+a(int):int;
+foo(int->void):void(b(int):int){
+	a(int) = b(int);
+}
+main(->int):int(){
+	foo(int->void)(10);
+	write a(int);
+	return 0;
+}

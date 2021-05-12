@@ -1,0 +1,11 @@
+a : int;
+
+foo : void(b : int) {
+	a = b;
+}
+
+main : int() {
+	foo(10);
+	write a;
+	return 0;
+}

@@ -1,0 +1,8 @@
+main : void() {
+	a : byte;
+	if (a > 9) {
+		write 1;
+	} else {
+		write 0;
+	}
+}

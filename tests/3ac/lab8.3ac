@@ -1,0 +1,111 @@
+[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN foo LOCALS]
+a (formal arg of 8)
+b (local var of 8 bytes)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+tmp2 (tmp var of 8 bytes)
+tmp3 (tmp var of 8 bytes)
+[END foo LOCALS]
+fun_foo:    enter foo
+            getarg 1 [a]
+            [tmp0] := 2
+            [tmp1] := [tmp0] MULT64 [a]
+            [tmp2] := 14
+            [tmp3] := [tmp1] ADD64 [tmp2]
+            [b] := [tmp3]
+            setret [b]
+            goto lbl_0
+lbl_0:      leave foo
+[BEGIN main LOCALS]
+a (local var of 8 bytes)
+b (local var of 8 bytes)
+c (local var of 8 bytes)
+arr (local var of 40 bytes)
+i (local var of 8 bytes)
+sum (local var of 8 bytes)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+tmp2 (tmp var of 8 bytes)
+tmp3 (tmp var of 8 bytes)
+tmp4 (tmp var of 8 bytes)
+tmp5 (tmp var of 8 bytes)
+tmp6 (tmp var of 8 bytes)
+tmp7 (tmp var of 8 bytes)
+tmp8 (tmp var of 1 bytes)
+tmp9 (tmp var of 8 bytes)
+tmp10 (tmp var of 8 bytes)
+tmp11 (tmp var of 1 bytes)
+tmp12 (tmp var of 8 bytes)
+tmp13 (tmp var of 8 bytes)
+tmp14 (tmp var of 8 bytes)
+tmp15 (tmp var of 8 bytes)
+tmp16 (tmp var of 1 bytes)
+tmp17 (tmp var of 8 bytes)
+tmp18 (tmp var of 8 bytes)
+tmp20 (tmp var of 8 bytes)
+tmp22 (tmp var of 8 bytes)
+tmp23 (tmp var of 8 bytes)
+tmp24 (tmp var of 8 bytes)
+loc19 (tmp loc of 8 bytes)
+loc21 (tmp loc of 8 bytes)
+[END main LOCALS]
+main:       enter main
+            [tmp0] := 8
+            [a] := [tmp0]
+            setarg 1 [a]
+            call foo
+            getret [tmp1]
+            [tmp2] := 4
+            [tmp3] := [tmp1] MULT64 [tmp2]
+            [tmp4] := 12
+            [tmp5] := [tmp3] SUB64 [tmp4]
+            setarg 1 [tmp5]
+            call foo
+            getret [tmp6]
+            [b] := [tmp6]
+            [tmp7] := 37
+            [tmp8] := [b] LT64 [tmp7]
+            IFZ [tmp8] GOTO lbl_2
+            setarg 1 [b]
+            call foo
+            getret [tmp9]
+            [c] := [tmp9]
+            [b] := [c]
+lbl_2:      nop
+lbl_3:      nop
+            [tmp10] := 0
+            [tmp11] := [b] LT64 [tmp10]
+            IFZ [tmp11] GOTO lbl_4
+            setarg 1 [b]
+            call foo
+            getret [tmp12]
+            [tmp13] := 7
+            [tmp14] := [tmp12] ADD64 [tmp13]
+            [b] := [tmp14]
+            goto lbl_3
+lbl_4:      nop
+lbl_5:      nop
+            [tmp15] := 5
+            [tmp16] := [i] LT64 [tmp15]
+            IFZ [tmp16] GOTO lbl_6
+            setarg 1 [i]
+            call foo
+            getret [tmp17]
+            [tmp18] := [i] MULT64 8
+            loc19 := arr ADD64 [tmp18]
+            [loc19] := [tmp17]
+            [i] := [i] ADD64 1
+            [tmp20] := [i] MULT64 8
+            loc21 := arr ADD64 [tmp20]
+            [tmp22] := [sum] ADD64 [loc21]
+            [sum] := [tmp22]
+            goto lbl_5
+lbl_6:      nop
+            [tmp23] := [sum] SUB64 [b]
+            [tmp24] := [tmp23] ADD64 [a]
+            setret [tmp24]
+            goto lbl_1
+lbl_1:      leave main
+

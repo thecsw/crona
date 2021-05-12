@@ -1,0 +1,4 @@
+main : void() {
+    b : bool;
+    b = 3 && (false || true);
+}

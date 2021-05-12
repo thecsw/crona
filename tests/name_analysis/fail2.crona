@@ -1,0 +1,6 @@
+main : void() {
+     a : int;
+     b : string;
+     b = "hello";
+     a = b;
+}

@@ -1,0 +1,27 @@
+foo : byte() {
+    a : int;
+    return a;
+}
+
+bar : bool() {
+    return 10;
+}
+
+rawr : int() {
+    a : byte;
+    return a; // no error
+}
+
+ss : string() {
+    return 90;
+}
+
+sss : string() {
+    return true;
+}
+
+oof : bool() {
+    return "string";
+}
+
+main : void() {}

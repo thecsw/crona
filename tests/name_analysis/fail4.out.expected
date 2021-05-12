@@ -1,0 +1,5 @@
+main(->int):int(){
+	s(byte array [0]):byte array[0];
+	s(byte array [0]) = "success";
+	return s(byte array [0]);
+}

@@ -1,0 +1,13 @@
+
+main : void() {
+    arr : byte array[8];
+    arr[0] = 104;
+    arr[1] = 101;
+    arr[2] = 108;
+    arr[3] = 108;
+    arr[4] = 111;
+    arr[5] = 33;
+    arr[6] = 33;
+    arr[7] = 0;
+    write arr;
+}

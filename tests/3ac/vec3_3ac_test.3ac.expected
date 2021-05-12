@@ -1,0 +1,103 @@
+[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN add LOCALS]
+a (formal arg of 192)
+b (formal arg of 192)
+c (local var of 192 bytes)
+i (local var of 8 bytes)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+tmp2 (tmp var of 8 bytes)
+tmp3 (tmp var of 8 bytes)
+tmp5 (tmp var of 8 bytes)
+tmp7 (tmp var of 8 bytes)
+tmp8 (tmp var of 8 bytes)
+loc4 (tmp loc of 8 bytes)
+loc6 (tmp loc of 8 bytes)
+loc9 (tmp loc of 8 bytes)
+[END add LOCALS]
+fun_add:    enter add
+            getarg 1 [a]
+            getarg 2 [b]
+            [tmp0] := 0
+            [i] := [tmp0]
+lbl_1:      nop
+            [tmp1] := 3
+            [tmp2] := [i] LT64 [tmp1]
+            IFZ [tmp2] GOTO lbl_2
+            [tmp3] := [i] MULT64 8
+            loc4 := a ADD64 [tmp3]
+            [tmp5] := [i] MULT64 8
+            loc6 := b ADD64 [tmp5]
+            [tmp7] := [loc4] ADD64 [loc6]
+            [tmp8] := [i] MULT64 8
+            loc9 := c ADD64 [tmp8]
+            [loc9] := [tmp7]
+            goto lbl_1
+lbl_2:      nop
+            setret [c]
+            goto lbl_0
+lbl_0:      leave add
+[BEGIN dot LOCALS]
+a (formal arg of 192)
+b (formal arg of 192)
+c (local var of 8 bytes)
+i (local var of 8 bytes)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+tmp2 (tmp var of 8 bytes)
+tmp3 (tmp var of 8 bytes)
+tmp5 (tmp var of 8 bytes)
+tmp7 (tmp var of 8 bytes)
+tmp8 (tmp var of 8 bytes)
+loc4 (tmp loc of 8 bytes)
+loc6 (tmp loc of 8 bytes)
+[END dot LOCALS]
+fun_dot:    enter dot
+            getarg 1 [a]
+            getarg 2 [b]
+            [tmp0] := 0
+            [i] := [tmp0]
+lbl_4:      nop
+            [tmp1] := 3
+            [tmp2] := [i] LT64 [tmp1]
+            IFZ [tmp2] GOTO lbl_5
+            [tmp3] := [i] MULT64 8
+            loc4 := a ADD64 [tmp3]
+            [tmp5] := [i] MULT64 8
+            loc6 := b ADD64 [tmp5]
+            [tmp7] := [loc4] MULT64 [loc6]
+            [tmp8] := [c] ADD64 [tmp7]
+            [c] := [tmp8]
+            goto lbl_4
+lbl_5:      nop
+            setret [c]
+            goto lbl_3
+lbl_3:      leave dot
+[BEGIN isOrthogonal LOCALS]
+a (formal arg of 192)
+b (formal arg of 192)
+c (local var of 8 bytes)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+tmp2 (tmp var of 8 bytes)
+[END isOrthogonal LOCALS]
+fun_isOrthogonal: enter isOrthogonal
+            getarg 1 [a]
+            getarg 2 [b]
+            setarg 1 [a]
+            setarg 2 [b]
+            call dot
+            getret [tmp0]
+            [c] := [tmp0]
+            [tmp1] := 0
+            [tmp2] := [c] EQ64 [tmp1]
+            IFZ [tmp2] GOTO lbl_7
+            setret 1
+            goto lbl_6
+            goto lbl_8
+lbl_7:      nop
+            setret 0
+            goto lbl_6
+lbl_8:      nop
+lbl_6:      leave isOrthogonal

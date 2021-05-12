@@ -1,0 +1,7 @@
+f : int (arg1 : int, arg2 : bool){
+}
+g : void (){
+	a : int;
+	f(a, true);
+	g();
+}

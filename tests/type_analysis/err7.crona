@@ -1,0 +1,7 @@
+foo : void(a : int, b : int) {}
+
+main : void() {
+    foo(true, false);
+    foo("1", "2");
+    foo(true, "hello");
+}

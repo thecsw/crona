@@ -1,0 +1,105 @@
+[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN manyArgs LOCALS]
+a (formal arg of 8)
+b (formal arg of 1)
+c (formal arg of 1)
+d (formal arg of 8)
+e (formal arg of 8)
+f (formal arg of 8)
+g (formal arg of 8)
+h (formal arg of 8)
+[END manyArgs LOCALS]
+fun_manyArgs: enter manyArgs
+            getarg 1 [a]
+            getarg 2 [b]
+            getarg 3 [c]
+            getarg 4 [d]
+            getarg 5 [e]
+            getarg 6 [f]
+            getarg 7 [g]
+            getarg 8 [h]
+            WRITE [a]
+            WRITE [b]
+            WRITE [c]
+            WRITE [d]
+            WRITE [e]
+            WRITE [f]
+            WRITE [g]
+            WRITE [h]
+lbl_0:      leave manyArgs
+[BEGIN main LOCALS]
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+tmp2 (tmp var of 8 bytes)
+tmp3 (tmp var of 8 bytes)
+tmp4 (tmp var of 8 bytes)
+[END main LOCALS]
+main:       enter main
+            [tmp0] := 10
+            [tmp1] := 11
+            [tmp2] := 12
+            [tmp3] := 13
+            [tmp4] := 14
+            setarg 1 512
+            setarg 2 0
+            setarg 3 4
+            setarg 4 [tmp0]
+            setarg 5 [tmp1]
+            setarg 6 [tmp2]
+            setarg 7 [tmp3]
+            setarg 8 [tmp4]
+            call manyArgs
+lbl_1:      leave main[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN manyArgs LOCALS]
+a (formal arg of 8)
+b (formal arg of 1)
+c (formal arg of 1)
+d (formal arg of 8)
+e (formal arg of 8)
+f (formal arg of 8)
+g (formal arg of 8)
+h (formal arg of 8)
+[END manyArgs LOCALS]
+fun_manyArgs: enter manyArgs
+            getarg 1 [a]
+            getarg 2 [b]
+            getarg 3 [c]
+            getarg 4 [d]
+            getarg 5 [e]
+            getarg 6 [f]
+            getarg 7 [g]
+            getarg 8 [h]
+            WRITE [a]
+            WRITE [b]
+            WRITE [c]
+            WRITE [d]
+            WRITE [e]
+            WRITE [f]
+            WRITE [g]
+            WRITE [h]
+lbl_0:      leave manyArgs
+[BEGIN main LOCALS]
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+tmp2 (tmp var of 8 bytes)
+tmp3 (tmp var of 8 bytes)
+tmp4 (tmp var of 8 bytes)
+[END main LOCALS]
+main:       enter main
+            [tmp0] := 10
+            [tmp1] := 11
+            [tmp2] := 12
+            [tmp3] := 13
+            [tmp4] := 14
+            setarg 1 512
+            setarg 2 0
+            setarg 3 4
+            setarg 4 [tmp0]
+            setarg 5 [tmp1]
+            setarg 6 [tmp2]
+            setarg 7 [tmp3]
+            setarg 8 [tmp4]
+            call manyArgs
+lbl_1:      leave main

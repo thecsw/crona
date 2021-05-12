@@ -1,0 +1,6 @@
+fn:int(a:int){
+	if (a > 0) {
+		write a;
+	}
+	write 1;
+}

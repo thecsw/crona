@@ -1,0 +1,22 @@
+manyArgs : void (a : int, b: bool, c: byte, d: int, e: int, f: int, g: int, h: int) {
+    write a;
+    write "\n";
+    write b;
+    write "\n";
+    write c;
+    write "\n";
+    write d;
+    write "\n";
+    write e;
+    write "\n";
+    write f;
+    write "\n";
+    write g;
+    write "\n";
+    write h;
+    write "\n";
+}
+
+main : void () {
+    manyArgs(512, false, 4, 10, 11, 12, 13, 14);
+}

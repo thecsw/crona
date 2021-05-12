@@ -1,0 +1,25 @@
+FATAL [9,19]: Type of actual does not match type of formal
+FATAL [11,19]: Type of actual does not match type of formal
+FATAL [14,19]: Type of actual does not match type of formal
+FATAL [15,19]: Type of actual does not match type of formal
+FATAL [16,20]: Type of actual does not match type of formal
+FATAL [17,18]: Function call with wrong number of args
+FATAL [18,18]: Function call with wrong number of args
+FATAL [20,18]: Function call with wrong number of args
+FATAL [21,18]: Invalid assignment operand
+FATAL [22,17]: Invalid assignment operand
+FATAL [26,10]: Arithmetic operator applied to invalid operand
+FATAL [27,10]: Arithmetic operator applied to invalid operand
+FATAL [27,14]: Arithmetic operator applied to invalid operand
+FATAL [28,12]: Type of actual does not match type of formal
+FATAL [28,19]: Function call with wrong number of args
+FATAL [29,12]: Type of actual does not match type of formal
+FATAL [29,22]: Type of actual does not match type of formal
+FATAL [30,6]: Invalid assignment operand
+FATAL [30,10]: Invalid assignment operand
+FATAL [31,6]: Invalid assignment operand
+FATAL [31,10]: Invalid assignment operand
+FATAL [32,6]: Invalid assignment operand
+FATAL [32,10]: Invalid assignment operand
+FATAL [34,13]: Return with a value in void function
+Type Analysis Failed

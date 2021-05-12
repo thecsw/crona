@@ -1,0 +1,5 @@
+main : void () {
+    while (true) {
+        write 1;
+    }
+}

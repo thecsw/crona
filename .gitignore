@@ -1,3 +1,7 @@
+# my emacs save files
+.saves
+*~
+
 # Prerequisites
 *.d
 

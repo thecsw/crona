@@ -1,0 +1,5 @@
+FATAL [4,12]: Non-bool expression used as a while condition
+FATAL [5,12]: Non-bool expression used as a while condition
+FATAL [6,12]: Non-bool expression used as a while condition
+FATAL [7,12]: Non-bool expression used as a while condition
+Type Analysis Failed

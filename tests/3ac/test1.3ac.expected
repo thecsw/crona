@@ -1,0 +1,34 @@
+[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN foo LOCALS]
+a (formal arg of 8)
+b (local var of 8 bytes)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+[END foo LOCALS]
+fun_foo:    enter foo
+            getarg 1 [a]
+            [tmp0] := 10
+            [tmp1] := [a] ADD64 [tmp0]
+            [b] := [tmp1]
+            setret [b]
+            goto lbl_0
+lbl_0:      leave foo
+[BEGIN main LOCALS]
+c (local var of 8 bytes)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+tmp2 (tmp var of 8 bytes)
+[END main LOCALS]
+main:       enter main
+            [tmp0] := 9
+            setarg 1 [tmp0]
+            call foo
+            getret [tmp1]
+            [c] := [tmp1]
+            setarg 1 [c]
+            call foo
+            getret [tmp2]
+            setret [tmp2]
+            goto lbl_1
+lbl_1:      leave main

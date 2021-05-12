@@ -1,0 +1,3 @@
+old iarr=[420, 1000, -2400]; new iarr=[10, 5, -1]
+old barr=[true, false, true]; new barr=[false, true, true]
+this is a string i guess

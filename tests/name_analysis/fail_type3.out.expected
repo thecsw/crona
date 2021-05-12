@@ -1,0 +1,17 @@
+b(bool):bool;
+arr(byte array [10]):byte array[10];
+main(int,byte array [0]->int):int(size(int):int, str(byte array [0]):byte array[0]){
+	i(int):int;
+	i(int) = 0;
+	while ((i(int) < size(int))){
+		b(bool) = (b(bool) && (arr(byte array [10])[i(int)] == str(byte array [0])[i(int)]));
+		if (b(bool)){
+			b(int):int;
+			b(int) = arr(byte array [10])[i(int)];
+			write b(int);
+		} else {
+			write b(bool);
+		}
+	}
+	return i(int);
+}

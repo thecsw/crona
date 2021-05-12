@@ -1,0 +1,6 @@
+main : void () {
+    while (havoc) {
+        write "heads\n";
+    }
+    write "tails\n";
+}

@@ -1,0 +1,12 @@
+foo(int->void):void(toprint(int):int){
+	write toprint(int);
+}
+main(int,byte array [0]->int):int(argc(int):int, argv(byte array [0]):byte array[0]){
+	exit_code(int):int;
+	exit_code(int) = 0;
+	if ((argc(int) > 2)){
+		exit_code(int) = 1;
+	}
+	foo(int->void)(exit_code(int));
+	return exit_code(int);
+}

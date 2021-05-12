@@ -1,0 +1,34 @@
+[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN add LOCALS]
+a (formal arg of 8)
+b (formal arg of 8)
+c (local var of 8 bytes)
+tmp0 (tmp var of 8 bytes)
+[END add LOCALS]
+fun_add:    enter add
+            getarg 1 [a]
+            getarg 2 [b]
+            [tmp0] := [a] ADD64 [b]
+            [c] := [tmp0]
+            setret [c]
+            goto lbl_0
+lbl_0:      leave add
+[BEGIN sub LOCALS]
+a (formal arg of 8)
+b (formal arg of 8)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+[END sub LOCALS]
+fun_sub:    enter sub
+            getarg 1 [a]
+            getarg 2 [b]
+            [tmp0] := NEG64 [b]
+            setarg 1 [a]
+            setarg 2 [tmp0]
+            call add
+            getret [tmp1]
+            setret [tmp1]
+            goto lbl_1
+lbl_1:      leave sub
+

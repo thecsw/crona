@@ -1,0 +1,3 @@
+main(int,byte->int):int(a(int):int, b(byte):byte){
+	a(int) = b(byte);
+}

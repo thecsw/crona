@@ -1,0 +1,41 @@
+i : int;
+by : byte;
+b : bool;
+
+set_i : void (new_i : int) {
+    i = new_i;
+}
+
+set_by : void (new_by : byte) {
+    by = new_by;
+}
+
+set_b : void (new_b : bool) {
+    b = new_b;
+}
+
+main : void() {
+    i = -500;
+    write "old i=";
+    write i;
+    write "; new i=";
+    set_i(500);
+    write i;
+    write "\n";
+
+    by = 20;
+    write "old by=";
+    write by;
+    write "; new by=";
+    set_by(255);
+    write by;
+    write "\n";
+
+    b = false;
+    write "old b=";
+    write b;
+    write "; new b=";
+    set_b(true);
+    write b;
+    write "\n";
+}

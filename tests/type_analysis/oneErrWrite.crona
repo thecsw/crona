@@ -1,0 +1,4 @@
+main : void() {
+    p : bool;
+    write p + 1;
+}

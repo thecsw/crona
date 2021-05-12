@@ -1,0 +1,3 @@
+FATAL [2,14]: Arithmetic operator applied to invalid operand
+FATAL [2,13]: Return with a value in void function
+Type Analysis Failed

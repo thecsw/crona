@@ -1,0 +1,19 @@
+[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN foo LOCALS]
+a (formal arg of 1)
+[END foo LOCALS]
+fun_foo:    enter foo
+            getarg 1 [a]
+            [a] := 37
+lbl_0:      leave foo
+[BEGIN main LOCALS]
+tmp0 (tmp var of 8 bytes)
+[END main LOCALS]
+main:       enter main
+            setarg 1 99
+            call foo
+            [tmp0] := 37
+            setret [tmp0]
+            goto lbl_1
+lbl_1:      leave main

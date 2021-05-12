@@ -1,0 +1,14 @@
+// Handles:
+// CallExpNode
+// CallStmtNode
+// HavocNode
+// StrLitNode
+// LValNode->IndexNode
+// ArrayTypeNode
+// ByteTypeNode
+
+fn : void (var1 : string, var2 : byte array[10]) {
+    var1 = "This is a string";
+    var2[2] = 1;
+    fn();
+}

@@ -1,0 +1,6 @@
+main : int() {
+ b : bool;
+ m : byte;
+ n : byte;
+ b = m > n;
+}

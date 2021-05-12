@@ -1,0 +1,5 @@
+foo : void() {}
+
+main : void() {
+    write foo();
+}

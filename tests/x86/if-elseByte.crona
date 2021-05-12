@@ -1,0 +1,74 @@
+main : void () {
+    b : int;
+    b = 1;
+    if (b == 0) {
+        write "b == 0: true\n";
+    } else {
+        write "b == 0: false\n";
+    }
+    if (b != 0) {
+        write "b != 0: true\n";
+    } else {
+        write "b != 0: false\n";
+    }
+    if (b < 0) {
+        write "b < 0: true\n";
+    } else {
+        write "b < 0: false\n";
+    }
+    if (b <= 0) {
+        write "b <= 0: true\n";
+    } else {
+        write "b <= 0: false\n";
+    }
+    if (b >= 0) {
+        write "b >= 0: true\n";
+    } else {
+        write "b >= 0: false\n";
+    }
+    if (b > 0) {
+        write "b > 0: true\n";
+    } else {
+        write "b > 0: false\n";
+    }
+    if (b < 1) {
+        write "b < 1: true\n";
+    } else {
+        write "b < 1: false\n";
+    }
+    if (b <= 1) {
+        write "b <= 1: true\n";
+    } else {
+        write "b <= 1: false\n";
+    }
+    if (b >= 1) {
+        write "b >= 1: true\n";
+    } else {
+        write "b >= 1: false\n";
+    }
+    if (b > 1) {
+        write "b > 1: true\n";
+    } else {
+        write "b > 1: false\n";
+    }
+    if (b < 2) {
+        write "b < 2: true\n";
+    } else {
+        write "b < 2: false\n";
+    }
+    if (b <= 2) {
+        write "b <= 2: true\n";
+    } else {
+        write "b <= 2: false\n";
+    }
+    if (b >= 2) {
+        write "b >= 2: true\n";
+    } else {
+        write "b >= 2: false\n";
+    }
+    if (b > 2) {
+        write "b > 2: true\n";
+    } else {
+        write "b > 2: false\n";
+    }
+}

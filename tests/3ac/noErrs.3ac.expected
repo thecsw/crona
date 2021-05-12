@@ -1,0 +1,16 @@
+[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN fn LOCALS]
+a (formal arg of 8)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+[END fn LOCALS]
+fun_fn:     enter fn
+            getarg 1 [a]
+            [tmp0] := 0
+            [tmp1] := [a] GT64 [tmp0]
+            IFZ [tmp1] GOTO lbl_1
+            WRITE [a]
+lbl_1:      nop
+            WRITE 1
+lbl_0:      leave fn

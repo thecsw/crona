@@ -1,0 +1,9 @@
+main : bool array[10] (ints: int array[10], bytes: byte array[10]) {
+    i : int;
+    i = 0;
+    ret : bool array[10];
+    while (i < 10) {
+        ret[i] = ints[i] == bytes[i];
+    }
+    return ret;
+} 

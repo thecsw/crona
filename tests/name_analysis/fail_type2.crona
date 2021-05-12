@@ -1,0 +1,9 @@
+main : void () {
+    a : int;
+    a = 10;
+    while (a >= 0) {
+        str : string;
+        b : byte;
+        a = b + str - 1;
+    }
+}

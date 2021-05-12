@@ -1,0 +1,45 @@
+// covers the following 3AC quads:
+// BinOpQuad
+// UnaryOpQuad
+// AssignQuad
+// CallQuad
+// EnterQuad
+// LeaveQuad
+// GetInQuad
+// SetInQuad
+// GetOutQuad
+// SetOutQuad
+// JmpQuad
+// JmpCondQuad
+// LocQuad
+
+
+add : int array[3] (a : int array[3], b : int array[3]) {
+    c : int array[3];
+    i : int;
+    i = 0;
+    while (i < 3) {
+        c[i] = a[i] + b[i];
+    }
+    return c;
+}
+
+dot : int (a : int array[3], b : int array[3]) {
+    c : int;
+    i : int;
+    i = 0;
+    while (i < 3) {
+        c = c + a[i] * b[i];
+    }
+    return c;
+}
+
+isOrthogonal : bool (a : int array[3], b : int array[3]) {
+    c : int;
+    c = dot(a, b);
+    if (c == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}

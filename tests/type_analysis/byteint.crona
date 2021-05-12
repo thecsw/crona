@@ -1,0 +1,5 @@
+main : int() {
+ b : bool;
+ x : int;
+ b = (x == 5);
+}

@@ -1,0 +1,12 @@
+// Handles
+// FromConsoleStmtNode
+// ToConsoleStmtNode
+
+fn : void () {
+    write "Hello world!\nWhat is your name?\n";
+    var1 : string;
+    read var1;
+    write "Hi ";
+    write var1;
+    write "!\n";
+}

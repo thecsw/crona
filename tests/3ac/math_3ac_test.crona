@@ -1,0 +1,21 @@
+// covers the following 3AC quads:
+// BinOpQuad
+// UnaryOpQuad
+// AssignQuad
+// CallQuad
+// EnterQuad
+// LeaveQuad
+// GetInQuad
+// SetInQuad
+// GetOutQuad
+// SetOutQuad
+
+add : int (a : int, b : int) {
+    c : int;
+    c = a + b;
+    return c;
+}
+
+sub : int (a : int, b : int) {
+    return add(a, -b);
+}

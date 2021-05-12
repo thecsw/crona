@@ -1,0 +1,9 @@
+main(->void):void(){
+	a(int):int;
+	a(int) = 10;
+	while ((a(int) >= 0)) {
+		str(byte array [0]):byte array[0];
+		b(byte):byte;
+		a(int) = ((b(byte) + str(byte array [0])) - 1);
+	}
+}

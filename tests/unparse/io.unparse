@@ -1,0 +1,8 @@
+fn : void() {
+	write "Hello world!\nWhat is your name?\n";
+	var1 : byte array[0];
+	read var1;
+	write "Hi ";
+	write var1;
+	write "!\n";
+}

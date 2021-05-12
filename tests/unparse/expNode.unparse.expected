@@ -1,0 +1,5 @@
+fn:void(var1:byte array[0], var2:byte array[10]){
+	var1 = "This is a string";
+	var2[2] = 1;
+	fn();
+}

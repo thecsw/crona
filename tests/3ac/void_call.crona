@@ -1,0 +1,8 @@
+foo : void(a : byte) {
+    a = 37;
+}
+
+main : int() {
+    foo(99);
+    return 37;
+}

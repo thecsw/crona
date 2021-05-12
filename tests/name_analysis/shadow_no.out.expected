@@ -1,0 +1,4 @@
+a(int) : int;
+main(int->void) : void(b(int) : int){
+	a(int) = b(int);
+}

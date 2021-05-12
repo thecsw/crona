@@ -1,0 +1,7 @@
+FATAL [4,9]: Type of actual does not match type of formal
+FATAL [4,15]: Type of actual does not match type of formal
+FATAL [5,9]: Type of actual does not match type of formal
+FATAL [5,14]: Type of actual does not match type of formal
+FATAL [6,9]: Type of actual does not match type of formal
+FATAL [6,15]: Type of actual does not match type of formal
+Type Analysis Failed

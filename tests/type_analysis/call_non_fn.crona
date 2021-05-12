@@ -1,0 +1,14 @@
+
+a : bool;
+b : byte;
+c : int;
+d : int array[20];
+e : string;
+
+main : void() {
+    a();
+    b();
+    c();
+    d();
+    e();
+}

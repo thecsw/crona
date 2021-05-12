@@ -1,0 +1,10 @@
+fn1 : bool (p1: int) {
+    return true;
+}
+
+main : void () {
+    fn1(3);
+    b:bool;
+    a:int;
+    b = fn1(a);
+}

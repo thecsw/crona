@@ -1,0 +1,7 @@
+"this is a good string"
+"unterminated string
+"unterminated string\"
+"bad escape char \u"
+"bad escape \u and unterminated
+"unterminated string with bad escape \e \"
+"backslash followed by space: \ is not allowed"

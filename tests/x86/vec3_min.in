@@ -1,0 +1,72 @@
+add : int array[3] (a : int array[3], b : int array[3]) {
+    c : int array[3];
+    i : byte;
+    i = 0;
+    while (i < 3) {
+        c[i] = a[i] + b[i];
+        i++;
+    }
+    return c;
+}
+
+dot : int (a : int array[3], b : int array[3]) {
+    c : int;
+    i : byte;
+    c = 0;
+    i = 0;
+    while (i < 3) {
+        c = c + a[i] * b[i];
+        i++;
+    }
+    return c;
+}
+
+isOrthogonal : bool (a : int array[3], b : int array[3]) {
+    c : int;
+    c = dot(a, b);
+    if (c == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+writeVec3 : void (a : int array[3]) {
+    write "[";
+    write a[0];
+    write ", ";
+    write a[1];
+    write ", ";
+    write a[2];
+    write "]";
+}
+
+vec3 : int array[3] (x : int, y : int, z : int) {
+    a : int array[3];
+    a[0] = x;
+    a[1] = y;
+    a[2] = z;
+    return a;
+}
+
+main : void() {
+    a : int array[3];
+    b : int array[3];
+    a = vec3(300, 50, 0);
+    b = vec3(5, -1, 5);
+    write "a = ";
+    writeVec3(a);
+    write "\n";
+    write "b = ";
+    writeVec3(b);
+    write "\n";
+    write "a + b = ";
+    writeVec3(add(a, b));
+    write "\n";
+    write "a . b = ";
+    write dot(a, b);
+    write "\n";
+    write "a and b orthogonal? ";
+    write isOrthogonal(a, b);
+    write "\n";
+}

@@ -1,0 +1,29 @@
+foo : int(a : int) {
+    b : int;
+    b = 2 * a + 14;
+    return b;
+}
+
+main : int() {
+     a : int;
+     b : int;
+     a = 8;
+     b = foo(foo(a) * 4 - 12);
+     if (b < 37) {
+        c : int;
+        c = foo(b);
+        b = c;
+     }
+     while (b < 0) {
+        b = foo(b) + 7;
+     }
+     arr : int array[5];
+     i : int;
+     sum : int;
+     while (i < 5) {
+        arr[i] = foo(i);
+        i++;
+        sum = sum + arr[i];      
+     }
+     return sum - b + a;
+}

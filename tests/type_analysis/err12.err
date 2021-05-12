@@ -1,0 +1,12 @@
+FATAL [4,9]: Relational operator applied to non-numeric operand
+FATAL [4,17]: Relational operator applied to non-numeric operand
+FATAL [5,9]: Relational operator applied to non-numeric operand
+FATAL [5,19]: Relational operator applied to non-numeric operand
+FATAL [6,9]: Relational operator applied to non-numeric operand
+FATAL [6,16]: Relational operator applied to non-numeric operand
+FATAL [7,9]: Relational operator applied to non-numeric operand
+FATAL [7,19]: Relational operator applied to non-numeric operand
+FATAL [8,9]: Relational operator applied to non-numeric operand
+FATAL [8,17]: Relational operator applied to non-numeric operand
+FATAL [9,9]: Relational operator applied to non-numeric operand
+Type Analysis Failed

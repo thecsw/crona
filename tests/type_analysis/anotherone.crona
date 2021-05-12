@@ -1,0 +1,35 @@
+f : int(a : byte) {}
+g : byte(b : int, c : bool) {}
+h : void() {}
+
+main : void() {
+     trashint : int;
+     trashbyte : byte;
+
+     trashint = f(true);
+     trashint = f(1);
+     trashint = f(-1);
+     trashint = f(0);
+     trashint = f(255);
+     trashint = f(256);
+     trashint = f(999999);
+     trashbyte = g(true, false);
+     trashbyte = g(true);
+     trashbyte = g(true, true, true);
+     trashbyte = g(5, false);
+     trashbyte = g(39021, false, 8);
+     trashbyte = h();
+     trashint = h();
+     
+     a : int;
+     a = f(99) + g(255, true);
+     a = h() + g(8, true);
+     a = h + g;
+     a = f(999) + g(-1, true, false);
+     a = f(9999) + f(-1);
+     h = g;
+     f = g;
+     g = f;
+
+     return a;
+}

@@ -1,0 +1,5 @@
+*.s
+*.prog
+*.out
+*.err
+*.3ac

@@ -1,0 +1,13 @@
+glob:bool;
+
+foo:int(a : int) {
+	a = 10;
+	return a;
+}
+
+main:int(){
+	a:int;
+	glob = a;
+	foo(a);
+	//b = a;
+}

@@ -1,0 +1,14 @@
+[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN main LOCALS]
+a (local var of 640 bytes)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 8 bytes)
+loc2 (tmp loc of 8 bytes)
+[END main LOCALS]
+main:       enter main
+            [tmp0] := 10
+            [tmp1] := 1 MULT64 8
+            loc2 := a ADD64 [tmp1]
+            [loc2] := [tmp0]
+lbl_0:      leave main

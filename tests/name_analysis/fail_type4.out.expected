@@ -1,0 +1,9 @@
+main(int array [10],byte array [10]->bool array [10]):bool array[10](ints(int array [10]):int array[10], bytes(byte array [10]):byte array[10]){
+	i(int):int;
+	i(int) = 0;
+	ret(bool array [10]):bool array[10];
+	while ((i(int) < 10)){
+		ret(bool array [10])[i(int)] = (ints(int array [10])[i(int)] == bytes(byte array [10])[i(int)]);
+	}
+	return ret(bool array [10]);
+}

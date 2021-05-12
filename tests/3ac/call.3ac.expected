@@ -1,0 +1,26 @@
+[BEGIN GLOBALS]
+[END GLOBALS]
+[BEGIN fn1 LOCALS]
+p1 (formal arg of 8)
+[END fn1 LOCALS]
+fun_fn1:    enter fn1
+            getarg 1 [p1]
+            setret 1
+            goto lbl_0
+lbl_0:      leave fn1
+[BEGIN main LOCALS]
+b (local var of 1 bytes)
+a (local var of 8 bytes)
+tmp0 (tmp var of 8 bytes)
+tmp1 (tmp var of 1 bytes)
+tmp2 (tmp var of 1 bytes)
+[END main LOCALS]
+main:       enter main
+            [tmp0] := 3
+            setarg 1 [tmp0]
+            call fn1
+            setarg 1 [a]
+            call fn1
+            getret [tmp2]
+            [b] := [tmp2]
+lbl_1:      leave main

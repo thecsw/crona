@@ -1,0 +1,18 @@
+[BEGIN GLOBALS]
+str_1 "Hello, "
+str_0 "What's your name?"
+[END GLOBALS]
+[BEGIN main LOCALS]
+input (local var of 37 bytes)
+tmp0 (tmp var of 8 bytes)
+[END main LOCALS]
+main:       enter main
+            WRITE [str_0]
+            READ [input]
+            WRITE [str_1]
+            WRITE [input]
+            [tmp0] := 0
+            setret [tmp0]
+            goto lbl_0
+lbl_0:      leave main
+

@@ -1,0 +1,10 @@
+main : void() {
+    a : int;
+    a = true + "hello";
+    b : bool;
+    b++;
+    b--;
+    a = true / "hello";
+    a = "one" * false;
+    a = "bbbb" - true;
+}

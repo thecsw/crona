@@ -1,0 +1,7 @@
+FATAL [4,10]: Logical operator applied to non-bool operand
+FATAL [5,9]: Logical operator applied to non-bool operand
+FATAL [5,19]: Logical operator applied to non-bool operand
+FATAL [6,9]: Logical operator applied to non-bool operand
+FATAL [6,15]: Logical operator applied to non-bool operand
+FATAL [7,9]: Logical operator applied to non-bool operand
+Type Analysis Failed

@@ -1,0 +1,5 @@
+main : void() {
+    a : int array[1];
+    a : void;
+    a[10] = 9;
+}

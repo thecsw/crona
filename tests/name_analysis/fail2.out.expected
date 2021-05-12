@@ -1,0 +1,6 @@
+main(->void) : void(){
+	a(int) : int;
+	b(byte array [0]) : byte array[0];
+	b(byte array [0]) = "hello";
+	a(int) = b(byte array [0]);
+}

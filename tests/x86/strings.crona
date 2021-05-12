@@ -1,0 +1,15 @@
+print : void (s14 : byte array[15]) {
+    write s14;
+}
+
+main : int() {
+    print("lit string arg");
+    write "\n";
+    input : byte array[48];
+    write "What's your name?\n";
+    read input;
+    write "Hello, ";
+    write input;
+    write "\n";
+    return 0;
+}

@@ -1,0 +1,11 @@
+main(->void) : void(){
+	b(int) : int;
+	b(int) = 37;
+	s(byte array [0]) : byte array[0];
+	s(byte array [0]) = "yes";
+	while ((b(int) != 37)){
+		s(byte array [0]) : byte array[0];
+		s(byte array [0]) = "olala";
+		b(int) = s(byte array [0]);
+	}
+}

@@ -1,0 +1,9 @@
+// Handles: WhileStmtNode
+
+fn : void () {
+    var1 : int;
+    var1 = 0;
+    while (var1 < 5) {
+        var1++;
+    }
+}

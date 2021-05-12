@@ -1,0 +1,26 @@
+main : void () {
+    write "5 + 4 = ";
+    write 5 + 4;
+    write "\n";
+    write "5 - 4 = ";
+    write 5 - 4;
+    write "\n";
+    write "5 * 4 = ";
+    write 5 * 4;
+    write "\n";
+    write "5 / 4 = ";
+    write 5 / 4;
+    write "\n";
+    write "623 + 280 = ";
+    write 623 + 280;
+    write "\n";
+    write "623 - 280 = ";
+    write 623 - 280;
+    write "\n";
+    write "623 * 280 = ";
+    write 623 * 280;
+    write "\n";
+    write "623 / 280 = ";
+    write 623 / 280;
+    write "\n";
+}

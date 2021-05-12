@@ -1,0 +1,27 @@
+byteArrFun : void (arr: byte array[4]) {
+    write arr;
+    write "\n";
+}
+
+intArrFun : void (arr: int array[3]) {
+    write arr[0];
+    write " ";
+    write arr[1];
+    write " ";
+    write arr[2];
+    write "\n";
+}
+
+main : void () {
+    a : byte array[4];
+    a[0] = 110;
+    a[1] = 111;
+    a[2] = 46;
+    a[3] = 0;
+    byteArrFun(a);
+    b : int array[3];
+    b[0] = 256;
+    b[1] = 386;
+    b[2] = 8888;
+    intArrFun(b);
+}

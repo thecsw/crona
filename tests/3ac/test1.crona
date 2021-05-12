@@ -1,0 +1,11 @@
+foo : int(a: int) {
+    b : int;
+    b = a + 10;
+    return b;
+}
+
+main : int() {
+    c : int;
+    c = foo(9);
+    return foo(c);
+}

@@ -1,0 +1,8 @@
+foo : void() {}
+
+main : void() {
+    if (!"true") {}
+    if ("true" || 7) {}
+    if (99 && "false") {}
+    if (foo || true) {}
+}

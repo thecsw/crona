@@ -1,0 +1,3 @@
+old i=-500; new i=500
+old by=20; new by=255
+old b=false; new b=true

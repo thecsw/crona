@@ -1,0 +1,68 @@
+iarr : int array[3];
+str : byte array[26];
+barr : bool array[3];
+
+set_iarr : void (new_iarr : int array[3]) {
+    iarr = new_iarr;
+}
+
+write_ivec3 : void (a : int array[3]) {
+    write "[";
+    write a[0];
+    write ", ";
+    write a[1];
+    write ", ";
+    write a[2];
+    write "]";
+}
+
+ivec3 : int array[3] (x : int, y : int, z : int) {
+    a : int array[3];
+    a[0] = x;
+    a[1] = y;
+    a[2] = z;
+    return a;
+}
+
+set_barr : void (new_barr : bool array[3]) {
+    barr = new_barr;
+}
+
+write_bvec3 : void (a : bool array[3]) {
+    write "[";
+    write a[0];
+    write ", ";
+    write a[1];
+    write ", ";
+    write a[2];
+    write "]";
+}
+
+bvec3 : bool array[3] (x : bool, y : bool, z : bool) {
+    a : bool array[3];
+    a[0] = x;
+    a[1] = y;
+    a[2] = z;
+    return a;
+}
+
+main : void() {
+    iarr = ivec3(420, 1000, -2400);
+    write "old iarr=";
+    write_ivec3(iarr);
+    write "; new iarr=";
+    set_iarr(ivec3(10,5,-1));
+    write_ivec3(iarr);
+    write "\n";
+
+    barr = bvec3(true, false, true);
+    write "old barr=";
+    write_bvec3(barr);
+    write "; new barr=";
+    set_barr(bvec3(false, true, true));
+    write_bvec3(barr);
+    write "\n";
+
+    str = "this is a string i guess\n";
+    write str;
+}

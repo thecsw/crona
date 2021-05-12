@@ -1,0 +1,24 @@
+// covers the following 3AC quads:
+// AssignQuad
+// CallQuad
+// EnterQuad
+// LeaveQuad
+// GetInQuad
+// SetInQuad
+// GetOutQuad
+// SetOutQuad
+// Syscall
+
+writeLine : void (str : string) {
+    write str;
+    write "\n";
+}
+
+main : void () {
+    writeLine("What is your name?");
+    name : string;
+    read name;
+    write "Hi ";
+    write name;
+    writeLine(", I hope you have a great day!");
+}

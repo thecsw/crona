@@ -1,0 +1,4 @@
+main : void() {
+    arr : int array[10];
+    write arr;
+}

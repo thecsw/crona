@@ -1,0 +1,3 @@
+FATAL [3,9]: Arithmetic operator applied to invalid operand
+FATAL [3,16]: Arithmetic operator applied to invalid operand
+Type Analysis Failed

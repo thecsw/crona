@@ -1,0 +1,4 @@
+a(byte array [10]):byte array[10];
+main(byte->void):void(b(byte):byte){
+	a(byte array [10])[0] = b(byte);
+}

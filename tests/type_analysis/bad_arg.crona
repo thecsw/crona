@@ -1,0 +1,6 @@
+f : bool(a : int) {}
+
+main : void() {
+    a : int;
+    a = 1 + f(true);
+}

@@ -1,0 +1,33 @@
+dot : int (a : int array[3], b : int array[3]) {
+    c : int;
+    i : byte;
+    c = 0;
+    i = 0;
+    while (i < 3) {
+        c = c + a[i] * b[i];
+        i++;
+    }
+    return c;
+}
+
+isOrthogonal : bool (a : int array[3], b : int array[3]) {
+    return dot(a, b) == 0;
+}
+
+vec3 : int array[3] (x : int, y : int, z : int) {
+    a : int array[3];
+    a[0] = x;
+    a[1] = y;
+    a[2] = z;
+    return a;
+}
+
+main : void() {
+    a : int array[3];
+    b : int array[3];
+    a = vec3(300, 50, 0);
+    b = vec3(5, -1, 5);
+    write "a and b orthogonal? ";
+    write isOrthogonal(a, b);
+    write "\n";
+}
