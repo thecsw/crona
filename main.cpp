@@ -1,5 +1,7 @@
 #include <fstream>
 #include <string.h>
+#include <string>
+#include <cstdlib>
 
 #include "errors.hpp"
 #include "scanner.hpp"
@@ -9,6 +11,9 @@
 #include "3ac.hpp"
 
 #include "macros.h"
+
+#define OK 0
+#define NOT_OK 1
 
 using namespace crona;
 
@@ -67,9 +72,9 @@ static crona::ProgramNode *syntacticAnalysis(std::ifstream *input)
 	return root;
 }
 
-static void outputAST(ASTNode *ast, const char *outPath)
+static void outputAST(ASTNode *ast, std::string outPath)
 {
-	if (strcmp(outPath, "--") == 0) {
+	if (outPath == "--") {
 		ast->unparse(std::cout, 0);
 	} else {
 		std::ofstream outStream(outPath);
@@ -82,7 +87,7 @@ static void outputAST(ASTNode *ast, const char *outPath)
 	}
 }
 
-static bool doUnparsing(std::ifstream *input, const char *outPath)
+static bool doUnparsing(std::ifstream *input, std::string outPath)
 {
 	crona::ProgramNode *ast = syntacticAnalysis(input);
 	if (ast == nullptr) {
@@ -127,13 +132,13 @@ static crona::IRProgram *do3AC(std::ifstream *input)
 	return typeAnalysis->ast->to3AC(typeAnalysis);
 }
 
-static void write3AC(crona::IRProgram *prog, const char *outPath)
+static void write3AC(crona::IRProgram *prog, std::string outPath)
 {
-	if (outPath == nullptr) {
+	if (outPath.empty()) {
 		throw new InternalError("Null 3AC file given");
 	}
 	std::string flatProg = prog->toString();
-	if (strcmp(outPath, "--") == 0) {
+	if (outPath == "--") {
 		std::cout << flatProg << std::endl;
 	} else {
 		std::ofstream outStream(outPath);
@@ -142,12 +147,12 @@ static void write3AC(crona::IRProgram *prog, const char *outPath)
 	}
 }
 
-static void writeX64(crona::IRProgram *prog, const char *outPath)
+static void writeX64(crona::IRProgram *prog, std::string outPath)
 {
-	if (outPath == nullptr) {
+	if (outPath.empty()) {
 		throw new InternalError("Null ASM file given");
 	}
-	if (strcmp(outPath, "--") == 0) {
+	if (outPath == "--") {
 		prog->toX64(std::cout);
 	} else {
 		std::ofstream outStream(outPath);
@@ -172,6 +177,37 @@ int main(int argc, char *argv[])
 	if (!input->good()) {
 		std::cerr << "Bad path " << file_name << std::endl;
 		usageAndDie();
+	}
+
+	// Check if we actually just straight-up need to
+	// build a compilable executable
+	// I know, this is a bad try-catch, but whatever
+
+	// This is gonna be real bad. Make the .s file lol with C++
+	// horrible string operations
+	std::string program_asm = "CRONA_INTERNAL.s";
+	try {
+		if (auto prog = do3AC(input)) {
+			writeX64(prog, program_asm);
+			// Do this very very very dangerous thingy
+			std::system("as -o CRONA_INTERNAL.o CRONA_INTERNAL.s");
+			std::system("\
+ld -dynamic-linker /lib64/ld-linux-x86-64.so.2          \
+/usr/lib/x86_64-linux-gnu/crt1.o                        \
+/usr/lib/x86_64-linux-gnu/crti.o                        \
+-lc                                                     \
+CRONA_INTERNAL.o                                        \
+./stdcrona.o                                            \
+/usr/lib/x86_64-linux-gnu/crtn.o                        \
+-o a.out                                                \
+");
+			std::system("rm CRONA_INTERAL.o CRONA_INTERNAL.s");
+			return OK;
+		}
+		// Now, let's actually bind everything together!
+	} catch (crona::InternalError *e) {
+		std::cerr << "InternalError: " << e->msg() << "\n";
+		return NOT_OK;
 	}
 
 	// Check whether the command is a no-op
@@ -228,7 +264,7 @@ int main(int argc, char *argv[])
 	}
 	ARGEND;
 
-	if (useful == false) {
+	if (not useful) {
 		std::cerr << "You didn't specify an operation to do!\n";
 		usageAndDie();
 	}
@@ -250,39 +286,39 @@ int main(int argc, char *argv[])
 			na = doNameAnalysis(input);
 			if (na != nullptr) {
 				outputAST(na->ast, nameFile);
-				return 0;
+				return OK;
 			}
 			std::cerr << "Name Analysis Failed\n";
-			return 1;
+			return NOT_OK;
 		}
 		if (checkTypes) {
 			if (doTypeAnalysis(input) != nullptr) {
-				return 0;
+				return OK;
 			}
 			std::cerr << "Type Analysis Failed\n";
-			return 1;
+			return NOT_OK;
 		}
 		if (threeACFile) {
 			if (auto prog = do3AC(input)) {
 				write3AC(prog, threeACFile);
-				return 0;
+				return OK;
 			}
-			return 1;
+			return NOT_OK;
 		}
 		if (asmFile) {
 			if (auto prog = do3AC(input)) {
 				writeX64(prog, asmFile);
-				return 0;
+				return OK;
 			}
-			return 1;
+			return NOT_OK;
 		}
 	} catch (crona::ToDoError *e) {
 		std::cerr << "ToDoError: " << e->msg() << "\n";
-		return 1;
+		return NOT_OK;
 	} catch (crona::InternalError *e) {
 		std::cerr << "InternalError: " << e->msg() << "\n";
-		return 1;
+		return NOT_OK;
 	}
 
-	return 0;
+	return OK;
 }
