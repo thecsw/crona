@@ -161,6 +161,33 @@ static void writeX64(crona::IRProgram *prog, std::string outPath)
 	}
 }
 
+static void writeEXE(std::ifstream *input)
+{
+	// Check if we actually just straight-up need to
+	// build a compilable executable
+	// I know, this is a bad try-catch, but whatever
+
+	// This is gonna be real bad. Make the .s file lol with C++
+	// horrible string operations
+	std::string program_asm = "CRONA_INTERNAL.s";
+	if (auto prog = do3AC(input)) {
+		writeX64(prog, program_asm);
+		// Do this very very very dangerous thingy
+		std::system("as -o CRONA_INTERNAL.o CRONA_INTERNAL.s");
+		std::system("\
+ld -dynamic-linker /lib64/ld-linux-x86-64.so.2          \
+/usr/lib/x86_64-linux-gnu/crt1.o                        \
+/usr/lib/x86_64-linux-gnu/crti.o                        \
+-lc                                                     \
+CRONA_INTERNAL.o                                        \
+./stdcrona.o                                            \
+/usr/lib/x86_64-linux-gnu/crtn.o                        \
+-o a.out                                                \
+");
+		std::system("rm CRONA_INTERNAL.o CRONA_INTERNAL.s");
+	}
+}
+
 int main(int argc, char *argv[])
 {
 	char *program_name = *argv++;
@@ -179,37 +206,17 @@ int main(int argc, char *argv[])
 		usageAndDie();
 	}
 
-	// Check if we actually just straight-up need to
-	// build a compilable executable
-	// I know, this is a bad try-catch, but whatever
-
-	// This is gonna be real bad. Make the .s file lol with C++
-	// horrible string operations
-	std::string program_asm = "CRONA_INTERNAL.s";
-	try {
-		if (auto prog = do3AC(input)) {
-			writeX64(prog, program_asm);
-			// Do this very very very dangerous thingy
-			std::system("as -o CRONA_INTERNAL.o CRONA_INTERNAL.s");
-			std::system("\
-ld -dynamic-linker /lib64/ld-linux-x86-64.so.2          \
-/usr/lib/x86_64-linux-gnu/crt1.o                        \
-/usr/lib/x86_64-linux-gnu/crti.o                        \
--lc                                                     \
-CRONA_INTERNAL.o                                        \
-./stdcrona.o                                            \
-/usr/lib/x86_64-linux-gnu/crtn.o                        \
--o a.out                                                \
-");
-			std::system("rm CRONA_INTERNAL.o CRONA_INTERNAL.s");
-			return OK;
-		}
-		// Now, let's actually bind everything together!
-	} catch (crona::InternalError *e) {
-		std::cerr << "InternalError: " << e->msg() << "\n";
-		return NOT_OK;
-	}
-
+        // Immediately check if we want to generate an EXE
+        if (argc == 2) {
+                try {
+                        writeEXE(input);
+                } catch (crona::InternalError *e) {
+                        std::cerr << "InternalError: " << e->msg() << "\n";
+                        return NOT_OK;
+                }
+                return OK;
+        }
+        
 	// Check whether the command is a no-op
 	bool useful = false;
 	// Output file if printing tokens
