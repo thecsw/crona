@@ -35,12 +35,12 @@ linux builds.
 Here is what you have to get before compiling it
 
 ``` sh
-$ sudo apt install flex bison libfl-dev
+> sudo apt install flex bison libfl-dev
 ```
 
-You build the compiler just with `$ make` and run tests with 
-`$ make test`. Clean the directory from build files with
-`$ make clean`
+You build the compiler just with `> make` and run tests with 
+`> make test`. Clean the directory from build files with
+`> make clean`
 
 ## Lexical Details
 
