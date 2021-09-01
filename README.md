@@ -1,6 +1,6 @@
 # C-rona Language
 
-Welcome! C-rona is a fantastic a general-purpose, procedural, 
+Welcome! C-rona is a fantastic general-purpose, procedural, 
 imperative, and statically-typed programming language written
 in C++
 
